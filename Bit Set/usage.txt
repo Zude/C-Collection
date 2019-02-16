@@ -1,0 +1,33 @@
+Usage:
+
+ueb03 -h
+  Show this help and exit.
+
+ueb03 ELEM_OP SET E
+  where ELEM_OP is one of:
+  e - check whether SET contains E or not
+  r - remove E from SET
+
+ueb03 UN_OP SET
+  where UN_OP is one of:
+  o - print SET
+  R - remove all elements from SET
+  E - Is SET empty?
+  c - copy SET
+  C - cardinality of SET
+  m - minimum of SET
+  M - maximum of SET
+  p - partition SET
+
+ueb03 BIN_OP SET1 SET2
+  where BIN_OP is one of:
+  s - SET1 subset of SET2?
+  = - SET1 equals SET2?
+  u - union between SET1 and SET2
+  i - intersection between SET1 and SET2
+  d - difference between SET1 and SET2 (SET1 \ SET2)
+  D - symmetric difference of SET1 and SET2
+
+SET, SET1, SET2 - one set of elements (e.g. {1,2,3})
+E   - one element (e.g. 1)
+All elements must be positive integer numbers (incl. 0).

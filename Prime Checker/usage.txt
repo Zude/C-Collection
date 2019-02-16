@@ -1,0 +1,20 @@
+Usage:
+
+  ueb01 -h
+
+  shows this help and exits.
+
+  - or -
+
+  ueb01 NUM OP
+
+  checks whether a given number is prime or finds the closest prime number
+  (downwards or upwards from the given number). A call always consists of
+  a number followed by an operation, where:
+
+  NUM has to be a positive integer number (including 0).
+
+  OP is one of:
+    = checks whether NUM is prime or not
+    + looks for the next prime number upwards from NUM (exclusive)
+    - looks for the next prime number downwards from NUM (exclusive)

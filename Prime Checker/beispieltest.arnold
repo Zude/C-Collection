@@ -1,0 +1,40 @@
+test {
+    name    = Hilfeausgabe
+    comment = Der Hilfetext muss auf stdout ausgegeben werden.
+    type    = param
+    cmd       {DUT -h | diff - usage.txt}
+    expect -i {^$}
+}
+
+test {
+    name    = Einfacher Primzahltest mit Primzahl (Ausgabe)
+    comment = Ist 7 eine Primzahl?
+    type    = param
+    cmd     {DUT 7 = | diff - seven_prime.txt}
+    expect  {^$}
+}
+
+test {
+    name    = Einfacher Primzahltest mit Primzahl (Rueckgabewert)
+    comment = Ist 7 eine Primzahl?
+    type    = param
+    cmd     {DUT 7 = | echo $?}
+    expect  {^0$}
+}
+
+test {
+    name    = Fehlerfall: Fehlermeldung auf stderr bei ungueltigem Aufruf
+    comment = Fehlermeldung muss mit 'Error:' beginnen und als erstes auf stderr ausgegeben werden.
+    type    = param
+    cmd       {DUT 2>&1 1>/dev/null}
+    expect -i {^Error:}
+}
+
+test {
+    name    = Fehlerfall: keine Parameter (Exitcode)
+    comment = Der Exitcode muss ungleich 0 sein im Fehlerfall.
+    type    = param
+    cmd       {DUT 2>/dev/null || echo "ungueltig"}
+    expect -i {^ungueltig$}
+}
+

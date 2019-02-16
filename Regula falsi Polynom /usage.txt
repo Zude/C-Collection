@@ -1,0 +1,20 @@
+Usage: ueb05 POLYNOM A0 B0 STEPS DISPLAY [M]
+         ->  compute a root of the POLYNOM
+             A0 / B0: starting values
+             STEPS: maximum number of iterations
+             DISPLAY: one of
+                p: display the simplified polynom
+                r: print the calculated root
+                h: output calculation as html
+                o: output calculation in human-readable format
+                l: output calculation as a log
+             M: optional, when given activates memory management
+    or: ueb05 -h ->  print usage
+
+The POLYNOM is a sum of terms of the form ax^b where a is the coefficient
+and b is the exponent. Sequences of whitespace as accepted by the C standard
+function sscanf() are allowed in front of each a (where the sign belongs to
+the a, i.e. no whitespace is allowed between sign and number) and each b;
+apart from that no whitespace is permitted.
+e.g.: "4.5x^2+2.0x^1+7.12x^2-9.0098x^0"
+e.g.: " 4.0x^ 2 +2.0x^ 1"

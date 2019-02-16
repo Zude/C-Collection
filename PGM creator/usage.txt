@@ -1,0 +1,32 @@
+Usage:
+
+ueb02 -h:
+    Show this help and exit.
+
+ - or -
+
+ueb02 IMAGE_WIDTH IMAGE_HEIGHT BACKGROUND [OPERATION ...]
+
+    IMAGE_WIDTH:  Image width (greater than zero)
+    IMAGE_HEIGHT: Image height (greater than zero)
+    BACKGROUND:   Background grayvalue (0..255)
+
+  OPERATION(s):
+    -h HEIGHT SPACE GRAY
+       -> Create repeating horizontal lines with HEIGHT pixels in height,
+          SPACE pixels space and with grayvalue GRAY
+          HEIGHT must be greater than zero
+    -v WIDTH SPACE GRAY
+       -> Create repeating vertical lines with WIDTH pixels in width,
+          SPACE pixels space and with grayvalue GRAY
+          WIDTH must be greater than zero
+    -c HEIGHT HSPACE WIDTH VSPACE GRAY
+       -> Create horizontal and vertical lines with [WIDTH|HEIGHT] pixel
+          in width/height, [H|V]SPACE pixel space with grayvalue GRAY.
+          WIDTH and HEIGHT must be greater than zero
+    -o FILE
+       -> Output the current image into FILE
+          and print the amount of written bytes to stdout.
+    -r FILE
+       -> Read an image from the given FILE and write it repeatedly
+          into the current image.
